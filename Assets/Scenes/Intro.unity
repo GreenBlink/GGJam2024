@@ -419,7 +419,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.14117648, g: 0.18039216, b: 0.26666668, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e2bb573394bf14ab0756aab338db0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 8
+  waitTime: 5
 --- !u!1 &1585863879
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +507,7 @@ GameObject:
   - component: {fileID: 1585863880}
   - component: {fileID: 1585863881}
   - component: {fileID: 1585863882}
+  - component: {fileID: 1585863883}
   m_Layer: 5
   m_Name: VideIntro
   m_TagString: Untagged
@@ -550,10 +551,10 @@ VideoPlayer:
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 0
-  m_AspectRatio: 2
+  m_AspectRatio: 0
   m_DataSource: 0
   m_TimeUpdateMode: 2
-  m_PlaybackSpeed: 1
+  m_PlaybackSpeed: 1.8
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
@@ -663,6 +664,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1585863883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585863879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4ba9d434edf4f45b180bfe2e53f6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: 0.25
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
