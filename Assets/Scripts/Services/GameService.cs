@@ -7,31 +7,45 @@ using UnityEngine.UI;
 public class GameService : MonoBehaviour
 {
     [SerializeField] private List<CountryData> _data = new List<CountryData>();
-
+    [SerializeField] private CardsService _cardService;
     [SerializeField] private TMP_Text _daysText;
-
-    [SerializeField] private int NumberOfDays;
 
     public int Population => _population;
 
     private int _population;
-    private int _currentDay;
+    private int _currentMove;
 
     void Awake()
+    {
+        _cardService.OnChoiceCard += ChoiceCard;
+        
+        CalculatePopulation();
+        UpdateDays();
+    }
+
+    public void NextMove()
+    {
+        _currentMove++;
+        _cardService.NextHand();
+
+        UpdateDays();
+    }
+
+    private void CalculatePopulation()
     {
         foreach (var data in _data)
         {
             _population += data.Population;
         }
-        _daysText.text = "0/10 Дней";
     }
 
-    public void NextMove()
+    private void UpdateDays()
     {
-        if (_currentDay < NumberOfDays)
-        {
-            _currentDay++;
-            _daysText.text = _currentDay +"/10 Дней";
-        }
+        _daysText.text = _currentMove.ToString();
+    }
+    
+    private void ChoiceCard(CardData data)
+    {
+        
     }
 }

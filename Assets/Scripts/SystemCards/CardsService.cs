@@ -32,8 +32,7 @@ public class CardsService : MonoBehaviour
         UpdateCountDeck();
         UpdateCountReset();
     }
-
-    [ContextMenu("NextHand")]
+    
     public void NextHand()
     {
         ResetHand();
