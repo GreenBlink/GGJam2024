@@ -23,6 +23,10 @@ public class InqusitionService : MonoBehaviour
         if (_currentPercent < _maxPercent)
         {
             _currentPercent += value;
+            if (_currentPercent < 0)
+            {
+                _currentPercent = 0;
+            }
         }
         else
         {
