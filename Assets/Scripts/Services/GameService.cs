@@ -10,6 +10,7 @@ public class GameService : MonoBehaviour
     [SerializeField] private CardsService _cardService;
     [SerializeField] private SacrifaicesService _sacrifaicesService;
     [SerializeField] private SectariansService _sectariansService;
+    [SerializeField] private InqusitionService _inqusitionService;
     [SerializeField] private PointsService _pointsService;
     [SerializeField] private TMP_Text _movesText;
     [SerializeField] private int _maxSacrifaicesForWin;
@@ -26,6 +27,7 @@ public class GameService : MonoBehaviour
 
         _sacrifaicesService.SetInfo(_maxSacrifaicesForWin);
         _sectariansService.SetInfo(_population);
+        _inqusitionService.SetInfo(0);
     }
 
     public void NextMove()
@@ -55,6 +57,6 @@ public class GameService : MonoBehaviour
         _sacrifaicesService.SacrificesChange(data.Sacrifice);
         _sectariansService.SectariansChange(data.Secta);
         _pointsService.PointsChange(data.Points);
-        //_sectariansService.SectariansChange(data.Inquisition);
+        _inqusitionService.PercentChange(data.Inquisition);
     }
 }
