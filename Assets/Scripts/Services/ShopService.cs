@@ -50,14 +50,14 @@ public class ShopService : MonoBehaviour
         }
     }
 
-    private void BuyCard(CardData cardData)
+    private void BuyCard(CardData cardData, int index)
     {
-        if (cardData.Cost > _pointsService.CurrentPoints || _buyCards[_availableCards.IndexOf(cardData)])
+        if (cardData.Cost > _pointsService.CurrentPoints || _buyCards[index])
         {
             return;
         }
         
-        _buyCards[_availableCards.IndexOf(cardData)] = true;
+        _buyCards[index] = true;
         _cardsService.AddCard(cardData);
         _pointsService.PointsChange(-cardData.Cost);
 

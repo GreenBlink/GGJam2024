@@ -2355,7 +2355,7 @@ MonoBehaviour:
   m_countDeck: {fileID: 382548519}
   m_countReset: {fileID: 2038194971}
   m_container: {fileID: 705936445}
-  m_prefabCard: {fileID: 8955052754485736475, guid: 0c7f065e4fda7064c8e4117ec01e9210, type: 3}
+  m_prefabCard: {fileID: 567147671172152353, guid: 8add13b514b38b84782507d84f8624b4, type: 3}
   m_dataStartDeck:
   - {fileID: 11400000, guid: 77cb83074ea21a74982d9348caa017ac, type: 2}
   - {fileID: 11400000, guid: 77cb83074ea21a74982d9348caa017ac, type: 2}

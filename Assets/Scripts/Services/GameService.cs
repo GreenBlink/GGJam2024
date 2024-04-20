@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -30,6 +31,11 @@ public class GameService : MonoBehaviour
         _sacrifaicesService.SetInfo(_maxSacrifaicesForWin);
         _sectariansService.SetInfo(_population);
         _inqusitionService.SetInfo(0);
+    }
+
+    private void Start()
+    {
+        NextMove();
     }
 
     public void NextMove()

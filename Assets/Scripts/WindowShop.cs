@@ -10,13 +10,14 @@ public class WindowShop : MonoBehaviour
 
     private List<CardData> m_data;
 
-    public event Action<CardData> OnBuyCard;
+    public event Action<CardData, int> OnBuyCard;
 
     private void Awake()
     {
         for (int i = 0; i < _cards.Count; i++)
         {
-            _cards[i].ClickCard += BuyCard;
+            int index = i;
+            _cards[i].OnClickCard += x => BuyCard(x, index);
         }
     }
 
@@ -39,8 +40,8 @@ public class WindowShop : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    private void BuyCard(CardView card)
+    private void BuyCard(CardView card, int index)
     {
-        OnBuyCard?.Invoke(card.CurrentData);
+        OnBuyCard?.Invoke(card.CurrentData, index);
     }
 }

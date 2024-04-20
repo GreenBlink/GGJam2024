@@ -101,7 +101,7 @@ public class CardsService : MonoBehaviour
         if (m_cards.Count <= index)
         {
             m_cards.Add(Instantiate(m_prefabCard, m_container));
-            m_cards[index].ChoiceCard += ChoiceCard;
+            m_cards[index].OnChoiceCard += ChoiceCard;
         }
         
         return m_cards[index];
