@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79bbe3eed87242cbb449fe327f702956, type: 3}
   m_Name: ColorData
   m_EditorClassIdentifier: 
-  _colorCommon: {r: 0, g: 0, b: 0, a: 0}
-  _colorChaos: {r: 0, g: 0, b: 0, a: 0}
-  _colorNeutral: {r: 0, g: 0, b: 0, a: 0}
-  _colorInquisition: {r: 0, g: 0, b: 0, a: 0}
+  _colorCommon: {r: 1, g: 0.7294118, b: 0.34117648, a: 1}
+  _colorChaos: {r: 0.93962264, g: 0.16640234, b: 0.06914194, a: 1}
+  _colorNeutral: {r: 0.024756042, g: 0.690566, b: 0.1814172, a: 1}
+  _colorInquisition: {r: 0, g: 0.7764706, b: 1, a: 1}
