@@ -16,4 +16,9 @@ public class ModView : MonoBehaviour
         gameObject.SetActive(true);
         m_text.text = value.ToString();
     }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
 }

@@ -21,6 +21,7 @@ public class CardView : MonoBehaviour, IPointerClickHandler
     [SerializeField] private ModView m_cost;
     [SerializeField] private ModView m_points;
     [SerializeField] private ModView m_removeCard;
+    [SerializeField] private ModView m_chaos;
 
     private Dictionary<CardType, Color> _colorData;
 
@@ -40,11 +41,21 @@ public class CardView : MonoBehaviour, IPointerClickHandler
         m_background.sprite = data.Background;
         
         m_sect.SetInfo(data.Secta);
-        m_inquisition.SetInfo(data.Inquisition);
         m_sacrifice.SetInfo(data.Sacrifice);
         m_cost.SetInfo(data.Cost);
         m_points.SetInfo(data.Points);
         m_removeCard.gameObject.SetActive(data.RemoveCard);
+
+        if (data.Inquisition > 0)
+        {
+            m_inquisition.SetInfo(data.Inquisition);
+            m_chaos.Hide();
+        }
+        else
+        {
+            m_chaos.SetInfo(-data.Inquisition);
+            m_inquisition.Hide();
+        }
 
         Colorist();
         Show();
