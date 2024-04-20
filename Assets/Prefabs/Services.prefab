@@ -100,7 +100,7 @@ MonoBehaviour:
   _removeCardService: {fileID: 4227526294237498269}
   _movesText: {fileID: 0}
   _maxSacrifaicesForWin: 25
-  _PercentPerDay: 2
+  _PercentPerDay: 4
 --- !u!114 &67877238630497983
 MonoBehaviour:
   m_ObjectHideFlags: 0
