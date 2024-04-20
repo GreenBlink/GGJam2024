@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 512088581}
   - component: {fileID: 512088580}
   - component: {fileID: 512088579}
+  - component: {fileID: 512088582}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -324,6 +325,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512088577}
   m_CullTransparentMesh: 1
+--- !u!114 &512088582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512088577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcbfc46224eb06d4b8142d81869a4c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 2d535ad736b055c4a92a17dab9f96886, type: 3}
+  _volume: 1
 --- !u!1 &747277837
 GameObject:
   m_ObjectHideFlags: 0
