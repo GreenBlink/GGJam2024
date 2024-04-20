@@ -5,17 +5,27 @@ using UnityEngine;
 
 public class SectariansService : MonoBehaviour
 {
-    [SerializeField] private GameService _gameService;
     [SerializeField] private TMP_Text _sectariansTextNumber;
 
+    private int _maxSectarians;
     private int _currentSectarians;
-    private void Start()
+
+    public void SetInfo(int population)
     {
-        _sectariansTextNumber.text = _currentSectarians.ToString() + "/" + _gameService.Population.ToString() + "M";
+        _maxSectarians = population;
+        
+        UpdateTextSectarians();
     }
 
-    private void OnSectariansChanged()
+    public void SectariansChange(int value)
     {
+        _currentSectarians += value;
 
+        UpdateTextSectarians();
+    }
+
+    private void UpdateTextSectarians()
+    {
+        _sectariansTextNumber.text = _currentSectarians + "/" + _maxSectarians + "M";
     }
 }

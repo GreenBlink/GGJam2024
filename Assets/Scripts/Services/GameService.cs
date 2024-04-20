@@ -8,9 +8,11 @@ public class GameService : MonoBehaviour
 {
     [SerializeField] private List<CountryData> _data = new List<CountryData>();
     [SerializeField] private CardsService _cardService;
-    [SerializeField] private TMP_Text _daysText;
-
-    public int Population => _population;
+    [SerializeField] private SacrifaicesService _sacrifaicesService;
+    [SerializeField] private SectariansService _sectariansService;
+    [SerializeField] private PointsService _pointsService;
+    [SerializeField] private TMP_Text _movesText;
+    [SerializeField] private int _maxSacrifaicesForWin;
 
     private int _population;
     private int _currentMove;
@@ -19,16 +21,20 @@ public class GameService : MonoBehaviour
     {
         _cardService.OnChoiceCard += ChoiceCard;
         
+        UpdateTextMoves();
         CalculatePopulation();
-        UpdateDays();
+
+        _sacrifaicesService.SetInfo(_maxSacrifaicesForWin);
+        _sectariansService.SetInfo(_population);
     }
 
     public void NextMove()
     {
         _currentMove++;
         _cardService.NextHand();
+        _pointsService.ResetPoints();
 
-        UpdateDays();
+        UpdateTextMoves();
     }
 
     private void CalculatePopulation()
@@ -39,13 +45,16 @@ public class GameService : MonoBehaviour
         }
     }
 
-    private void UpdateDays()
+    private void UpdateTextMoves()
     {
-        _daysText.text = _currentMove.ToString();
+        _movesText.text = _currentMove.ToString();
     }
     
     private void ChoiceCard(CardData data)
     {
-        
+        _sacrifaicesService.SacrificesChange(data.Sacrifice);
+        _sectariansService.SectariansChange(data.Secta);
+        _pointsService.PointsChange(data.Points);
+        //_sectariansService.SectariansChange(data.Inquisition);
     }
 }
