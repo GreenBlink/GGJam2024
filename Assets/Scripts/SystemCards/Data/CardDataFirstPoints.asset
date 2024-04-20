@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fab6aa6d034b16968c8b9e2af58e93, type: 3}
   m_Name: CardDataFirstPoints
   m_EditorClassIdentifier: 
-  m_background: {fileID: 0}
+  m_type: 0
+  m_background: {fileID: 21300000, guid: 1f41e81be5f5c1c449008f17ea3506ce, type: 3}
+  m_name: 
   m_cost: 0
-  m_points: 0
+  m_points: 1
   m_secta: 0
   m_inquisition: 0
   m_sacrifice: 0
+  m_addCard: 0
+  m_removeCard: 0

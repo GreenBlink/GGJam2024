@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class CardsService : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI m_countDeck;
+    [SerializeField] private TextMeshProUGUI m_countReset;
     [SerializeField] private Transform m_container;
     [SerializeField] private CardView m_prefabCard;
     [SerializeField] private List<CardData> m_dataStartDeck = new List<CardData>();
@@ -15,6 +18,8 @@ public class CardsService : MonoBehaviour
 
     private const int START_COUNT_CARDS_IN_HAND = 5;
 
+    public event Action<CardData> OnChoiceCard;
+
     private void Awake()
     {
         m_dataStartDeck = Shuffle(m_dataStartDeck);
@@ -23,11 +28,9 @@ public class CardsService : MonoBehaviour
         {
             m_dataDeck.Enqueue(data);
         }
-    }
 
-    private List<CardData> Shuffle(List<CardData> data)
-    {
-        return data.OrderBy(x => UnityEngine.Random.value).ToList();
+        UpdateCountDeck();
+        UpdateCountReset();
     }
 
     [ContextMenu("NextHand")]
@@ -46,6 +49,19 @@ public class CardsService : MonoBehaviour
             
             GetCardView(i).SetInfo(m_dataDeck.Dequeue());
         }
+
+        UpdateCountDeck();
+    }
+
+    public void AddCard(CardData data)
+    {
+        m_dataReset.Add(data);
+        UpdateCountReset();
+    }
+
+    public void RemoveCard()
+    {
+        
     }
 
     private void CheckNeedRefresh()
@@ -63,7 +79,9 @@ public class CardsService : MonoBehaviour
         }
         
         m_dataReset.Clear();
-        
+        UpdateCountDeck();
+        UpdateCountReset();
+
         // размешать колоду
         // анимация перехода карт из сбора в колоду
     }
@@ -74,8 +92,7 @@ public class CardsService : MonoBehaviour
         {
             if (card.IsActive)
             {
-                m_dataReset.Add(card.CurrentData);
-                card.Hide();
+                CardToReset(card);
             }
         }
     }
@@ -85,8 +102,38 @@ public class CardsService : MonoBehaviour
         if (m_cards.Count <= index)
         {
             m_cards.Add(Instantiate(m_prefabCard, m_container));
+            m_cards[index].ChoiceCard += ChoiceCard;
         }
         
         return m_cards[index];
+    }
+    
+    private void UpdateCountDeck()
+    {
+        m_countDeck.text = m_dataDeck.Count.ToString();
+    }
+    
+    private void UpdateCountReset()
+    {
+        m_countReset.text = m_dataReset.Count.ToString();
+    }
+
+    private void ChoiceCard(CardView card)
+    {
+        OnChoiceCard?.Invoke(card.CurrentData);
+        CardToReset(card);
+    }
+
+    private void CardToReset(CardView card)
+    {
+        m_dataReset.Add(card.CurrentData);
+        card.Hide();
+        
+        UpdateCountReset();
+    }
+    
+    private List<CardData> Shuffle(List<CardData> data)
+    {
+        return data.OrderBy(x => UnityEngine.Random.value).ToList();
     }
 }
