@@ -6,6 +6,8 @@ public class PointsService : MonoBehaviour
     [SerializeField] private TMP_Text _pointsText;
     
     private int _currentPoints;
+
+    public int CurrentPoints => _currentPoints;
     
     public void PointsChange(int value)
     {

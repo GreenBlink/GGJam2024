@@ -11,6 +11,7 @@ public class GameService : MonoBehaviour
     [SerializeField] private SacrifaicesService _sacrifaicesService;
     [SerializeField] private SectariansService _sectariansService;
     [SerializeField] private InqusitionService _inqusitionService;
+    [SerializeField] private ShopService _shopService;
     [SerializeField] private PointsService _pointsService;
     [SerializeField] private TMP_Text _movesText;
     [SerializeField] private int _maxSacrifaicesForWin;
@@ -35,6 +36,7 @@ public class GameService : MonoBehaviour
         _currentMove++;
         _cardService.NextHand();
         _pointsService.ResetPoints();
+        _shopService.SetNewOrder();
 
         UpdateTextMoves();
     }

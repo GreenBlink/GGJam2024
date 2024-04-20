@@ -5,11 +5,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CardView : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
+public class CardView : MonoBehaviour, IPointerClickHandler, IDragHandler, IEndDragHandler, IBeginDragHandler
 { 
     [SerializeField] private RectTransform m_rect;
     [SerializeField] private Image m_background;
     [SerializeField] private TextMeshProUGUI m_name;
+    [SerializeField] private GameObject m_buyingBlock;
+    [SerializeField] private bool m_isSystemDrag = true;
 
     private Vector3 m_startDragMousePosition;
 
@@ -20,6 +22,7 @@ public class CardView : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     public bool IsActive => gameObject.activeInHierarchy;
 
     public event Action<CardView> ChoiceCard;
+    public event Action<CardView> ClickCard;
 
     public void SetInfo(CardData data)
     {
@@ -28,6 +31,11 @@ public class CardView : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
         m_background.sprite = data.Background;
 
         Show();
+    }
+
+    public void SetBuyingState(bool isBuy)
+    {
+        m_buyingBlock.SetActive(isBuy);
     }
 
     public void Show()
@@ -48,6 +56,11 @@ public class CardView : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!m_isSystemDrag)
+        {
+            return;
+        }
+        
         DOTween.Kill("Move");
         m_startDragMousePosition = (Vector2) m_rect.position - eventData.position;
         m_startDragMousePosition.z = 0;
@@ -55,6 +68,11 @@ public class CardView : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     
     public void OnDrag(PointerEventData eventData)
     {
+        if (!m_isSystemDrag)
+        {
+            return;
+        }
+        
         Vector3 mousePosition = eventData.position;
         mousePosition.z = 0f;
         
@@ -63,6 +81,11 @@ public class CardView : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!m_isSystemDrag)
+        {
+            return;
+        }
+        
         if (m_rect.anchoredPosition.y > 300)
         {
             ChoiceCard?.Invoke(this);
@@ -70,5 +93,10 @@ public class CardView : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
         }
         
         m_rect.DOAnchorPos(Vector2.zero, DURATION_ANIM_FOCUS).SetId("Move");
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        ClickCard?.Invoke(this);
     }
 }
