@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 4545940086802637812}
   - component: {fileID: 1042689752740085846}
   - component: {fileID: 5762972918615040158}
+  - component: {fileID: 9145361810128308631}
+  - component: {fileID: 4227526294237498269}
   m_Layer: 0
   m_Name: Services
   m_TagString: Untagged
@@ -95,6 +97,7 @@ MonoBehaviour:
   _inqusitionService: {fileID: 1042689752740085846}
   _shopService: {fileID: 5762972918615040158}
   _pointsService: {fileID: 4545940086802637812}
+  _removeCardService: {fileID: 4227526294237498269}
   _movesText: {fileID: 0}
   _maxSacrifaicesForWin: 25
   _PercentPerDay: 2
@@ -236,3 +239,46 @@ MonoBehaviour:
   _pointsService: {fileID: 4545940086802637812}
   _cardsService: {fileID: 1769703790216742864}
   _windowShop: {fileID: 0}
+--- !u!114 &9145361810128308631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467142370745191112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c3edfa6b3fb7f419910c0264108b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+  - {fileID: 11400000, guid: 184ef207b37d95a438bc76e37ca482ad, type: 2}
+  - {fileID: 11400000, guid: 967250bc62d71974c8ebc15c97676d82, type: 2}
+  - {fileID: 11400000, guid: 94f7f4548aeda5a4b8e213ec6a7ea2d4, type: 2}
+  - {fileID: 11400000, guid: ded70a61bcbf85142944a724e72288eb, type: 2}
+  - {fileID: 11400000, guid: b157de9d6504fd84c9ebd29c59b9ca9b, type: 2}
+  - {fileID: 11400000, guid: cdbebe8f58c221f468effd8d5bd054ba, type: 2}
+  - {fileID: 11400000, guid: ed892807181f8f144a7a666d4956bd9e, type: 2}
+  _sectariansService: {fileID: 5070646754397405475}
+  _countries:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &4227526294237498269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467142370745191112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b4ab02898447d4bab15b91e3e5422b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardsService: {fileID: 1769703790216742864}
+  _window: {fileID: 0}
