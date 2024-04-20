@@ -20,6 +20,7 @@ public class CardView : MonoBehaviour, IPointerClickHandler
     [SerializeField] private ModView m_sacrifice;
     [SerializeField] private ModView m_cost;
     [SerializeField] private ModView m_points;
+    [SerializeField] private ModView m_removeCard;
 
     private Dictionary<CardType, Color> _colorData;
 
@@ -43,6 +44,7 @@ public class CardView : MonoBehaviour, IPointerClickHandler
         m_sacrifice.SetInfo(data.Sacrifice);
         m_cost.SetInfo(data.Cost);
         m_points.SetInfo(data.Points);
+        m_removeCard.gameObject.SetActive(data.RemoveCard);
 
         Colorist();
         Show();

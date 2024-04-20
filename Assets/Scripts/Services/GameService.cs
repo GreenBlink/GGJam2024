@@ -14,6 +14,7 @@ public class GameService : MonoBehaviour
     [SerializeField] private InqusitionService _inqusitionService;
     [SerializeField] private ShopService _shopService;
     [SerializeField] private PointsService _pointsService;
+    [SerializeField] private RemoveCardService _removeCardService;
     [SerializeField] private TMP_Text _movesText;
     [SerializeField] private int _maxSacrifaicesForWin;
     [SerializeField] private int _PercentPerDay;
@@ -68,6 +69,12 @@ public class GameService : MonoBehaviour
         _sectariansService.SectariansChange(data.Secta);
         _pointsService.PointsChange(data.Points);
         _inqusitionService.PercentChange(data.Inquisition);
+
+        if (data.RemoveCard)
+        {
+            _removeCardService.OpenRemoveCard(_cardService.DataReset);
+        }
+        
         Debug.Log(data.Name + " ��� ��������� �����");
         Debug.Log(data.Secta + "+ ��������� � �����");
         Debug.Log(data.Points + " ��������� � �������");

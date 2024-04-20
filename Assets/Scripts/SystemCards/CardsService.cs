@@ -18,6 +18,7 @@ public class CardsService : MonoBehaviour
 
     private const int START_COUNT_CARDS_IN_HAND = 5;
 
+    public List<CardData> DataReset => m_dataReset;
     public event Action<CardData> OnChoiceCard;
 
     private void Awake()
@@ -58,9 +59,10 @@ public class CardsService : MonoBehaviour
         UpdateCountReset();
     }
 
-    public void RemoveCard()
+    public void RemoveCard(CardData data)
     {
-        
+        m_dataReset.Remove(data);
+        UpdateCountReset();
     }
 
     private void CheckNeedRefresh()
