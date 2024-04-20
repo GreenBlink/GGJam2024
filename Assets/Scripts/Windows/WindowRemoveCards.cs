@@ -12,6 +12,14 @@ public class WindowRemoveCards : MonoBehaviour
     
     public event Action<CardData> OnRemoveCard;
 
+    private void OnDisable()
+    {
+        for (int i = 0; i < m_cards.Count; i++)
+        {
+            m_cards[i].Hide();
+        }
+    }
+
     public void Show(List<CardData> dataDeck, List<CardData> dataReset)
     {
         gameObject.SetActive(true);
