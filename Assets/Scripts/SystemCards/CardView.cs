@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -11,12 +12,16 @@ public class CardView : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Image m_background;
     [SerializeField] private TextMeshProUGUI m_name;
     [SerializeField] private GameObject m_buyingBlock;
+    [SerializeField] private ColorData m_dataColor;
+    [SerializeField] private List<MaskableGraphic> m_objectsColorist;
     
-    [SerializeField] private TextMeshProUGUI m_sect;
-    [SerializeField] private TextMeshProUGUI m_inquisition;
-    [SerializeField] private TextMeshProUGUI m_sacrifice;
-    [SerializeField] private TextMeshProUGUI m_cost;
-    [SerializeField] private TextMeshProUGUI m_points;
+    [SerializeField] private ModView m_sect;
+    [SerializeField] private ModView m_inquisition;
+    [SerializeField] private ModView m_sacrifice;
+    [SerializeField] private ModView m_cost;
+    [SerializeField] private ModView m_points;
+
+    private Dictionary<CardType, Color> _colorData;
 
     private const int MAX_VALUE_Y_FOCUS = 80;
     private const float DURATION_ANIM_FOCUS = 0.5f;
@@ -32,16 +37,17 @@ public class CardView : MonoBehaviour, IPointerClickHandler
         CurrentData = data;
         m_name.text = data.Name;
         m_background.sprite = data.Background;
+        
+        m_sect.SetInfo(data.Secta);
+        m_inquisition.SetInfo(data.Inquisition);
+        m_sacrifice.SetInfo(data.Sacrifice);
+        m_cost.SetInfo(data.Cost);
+        m_points.SetInfo(data.Points);
 
-        m_sect.text = data.Secta.ToString();
-        m_inquisition.text = data.Inquisition.ToString();
-        m_sacrifice.text = data.Sacrifice.ToString();
-        m_cost.text = data.Cost.ToString();
-        m_points.text = data.Points.ToString();
-
+        Colorist();
         Show();
     }
-
+    
     public void SetBuyingState(bool isBuy)
     {
         m_buyingBlock.SetActive(isBuy);
@@ -72,4 +78,21 @@ public class CardView : MonoBehaviour, IPointerClickHandler
     {
         OnClickCard?.Invoke(this);
     }
+    
+    private void Colorist()
+    {
+        _colorData ??= new Dictionary<CardType, Color>
+        {
+            { CardType.None, m_dataColor.ColorCommon },
+            { CardType.Chaos, m_dataColor.ColorChaos },
+            { CardType.Neutral, m_dataColor.ColorNeutral },
+            { CardType.Inquisition, m_dataColor.ColorInquisition },
+        };
+        
+        foreach (var obj in m_objectsColorist)
+        {
+            obj.color = _colorData[CurrentData.Type];
+        }
+    }
+
 }
