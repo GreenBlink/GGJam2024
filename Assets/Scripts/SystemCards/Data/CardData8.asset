@@ -15,8 +15,8 @@ MonoBehaviour:
   m_type: 2
   m_background: {fileID: 0}
   m_name: "\u0417\u0430\u0442\u0451\u0440\u0442\u044B\u0439 \u0441\u043B\u0435\u0434"
-  m_cost: 7
-  m_points: 5
+  m_cost: 8
+  m_points: 2
   m_secta: 0
   m_inquisition: 0
   m_sacrifice: 0
