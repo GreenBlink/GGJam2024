@@ -6,12 +6,9 @@ using UnityEngine;
 public class InqusitionService : MonoBehaviour
 {
     [SerializeField] private TMP_Text _inqusitionTextNumber;
-    [SerializeField] private float _PercentPerDay;
 
     private float _maxPercent = 100f;
     private float _currentPercent;
-
-
 
     public void SetInfo(int percent)
     {
@@ -24,7 +21,7 @@ public class InqusitionService : MonoBehaviour
     {
         if (_currentPercent < _maxPercent)
         {
-            _currentPercent += _PercentPerDay + value;
+            _currentPercent += value;
         }
 
         UpdateTextInqusition();

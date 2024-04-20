@@ -1832,6 +1832,7 @@ MonoBehaviour:
   _pointsService: {fileID: 579361596}
   _movesText: {fileID: 905722469}
   _maxSacrifaicesForWin: 200
+  _PercentPerDay: 2
 --- !u!114 &579361593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1912,7 +1913,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inqusitionTextNumber: {fileID: 1992738071}
-  _PercentPerDay: 2
 --- !u!1 &598769630
 GameObject:
   m_ObjectHideFlags: 0

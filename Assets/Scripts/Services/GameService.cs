@@ -14,6 +14,7 @@ public class GameService : MonoBehaviour
     [SerializeField] private PointsService _pointsService;
     [SerializeField] private TMP_Text _movesText;
     [SerializeField] private int _maxSacrifaicesForWin;
+    [SerializeField] private int _PercentPerDay;
 
     private int _population;
     private int _currentMove;
@@ -33,9 +34,10 @@ public class GameService : MonoBehaviour
     public void NextMove()
     {
         _currentMove++;
+        Debug.Log(_currentMove +": Номер хода");
         _cardService.NextHand();
         _pointsService.ResetPoints();
-
+        _inqusitionService.PercentChange(_PercentPerDay);
         UpdateTextMoves();
     }
 
@@ -58,5 +60,9 @@ public class GameService : MonoBehaviour
         _sectariansService.SectariansChange(data.Secta);
         _pointsService.PointsChange(data.Points);
         _inqusitionService.PercentChange(data.Inquisition);
+        Debug.Log(data.Name + " Имя сыгранной карты");
+        Debug.Log(data.Secta + "+ Изменение в секте");
+        Debug.Log(data.Points + " Изменение в поинтах");
+        Debug.Log(data.Inquisition + " Изменение в инквизиции");
     }
 }
