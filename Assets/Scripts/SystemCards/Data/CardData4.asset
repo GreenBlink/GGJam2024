@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2fab6aa6d034b16968c8b9e2af58e93, type: 3}
-  m_Name: CardData
+  m_Name: CardData4
   m_EditorClassIdentifier: 
   m_type: 0
   m_background: {fileID: 0}
