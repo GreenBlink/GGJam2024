@@ -14,7 +14,8 @@ public class CardsService : MonoBehaviour
     
     private Queue<CardData> m_dataDeck = new Queue<CardData>();
     private List<CardData> m_dataReset = new List<CardData>();
-    private List<CardView> m_cards = new List<CardView>();
+    private List<CardView> m_cardsPool = new List<CardView>();
+    private List<CardView> m_cardsInHand = new List<CardView>();
 
     private const int START_COUNT_CARDS_IN_HAND = 5;
 
@@ -37,20 +38,7 @@ public class CardsService : MonoBehaviour
     public void NextHand()
     {
         ResetHand();
-            
-        for (int i = 0; i < START_COUNT_CARDS_IN_HAND; i++)
-        {
-            CheckNeedRefresh();
-
-            if (m_dataDeck.Count == 0)
-            {
-                return;
-            }
-            
-            GetCardView(i).SetInfo(m_dataDeck.Dequeue());
-        }
-
-        UpdateCountDeck();
+        GetCardInDeck(START_COUNT_CARDS_IN_HAND);
     }
 
     public void AddCard(CardData data)
@@ -59,10 +47,23 @@ public class CardsService : MonoBehaviour
         UpdateCountReset();
     }
 
+    public void GetCardInDeck(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            GetCardInDeck();
+        }
+    }
+
     public void RemoveCard(CardData data)
     {
         m_dataReset.Remove(data);
         UpdateCountReset();
+    }
+    
+    public bool IsExistTypeCardInHand(CardType cardType)
+    {
+        return m_cardsInHand.Exists(x => x.CurrentData.Type == cardType);
     }
 
     private void CheckNeedRefresh()
@@ -89,24 +90,37 @@ public class CardsService : MonoBehaviour
     
     private void ResetHand()
     {
-        foreach (var card in m_cards)
+        for (int i = m_cardsInHand.Count - 1; i >= 0; i--)
         {
-            if (card.IsActive)
-            {
-                CardToReset(card);
-            }
+            CardToReset(m_cardsInHand[i]);
         }
     }
 
     private CardView GetCardView(int index)
     {
-        if (m_cards.Count <= index)
+        if (m_cardsPool.Count <= index)
         {
-            m_cards.Add(Instantiate(m_prefabCard, m_container));
-            m_cards[index].OnChoiceCard += ChoiceCard;
+            m_cardsPool.Add(Instantiate(m_prefabCard, m_container));
+            m_cardsPool[index].OnChoiceCard += ChoiceCard;
         }
         
-        return m_cards[index];
+        return m_cardsPool[index];
+    }
+    
+    private void GetCardInDeck()
+    {
+        CheckNeedRefresh();
+
+        if (m_dataDeck.Count == 0)
+        {
+            return;
+        }
+            
+        CardView cardView = GetCardView(m_cardsInHand.Count);
+        cardView.SetInfo(m_dataDeck.Dequeue());
+        m_cardsInHand.Add(cardView);
+        
+        UpdateCountDeck();
     }
     
     private void UpdateCountDeck()
@@ -127,6 +141,7 @@ public class CardsService : MonoBehaviour
 
     private void CardToReset(CardView card)
     {
+        m_cardsInHand.Remove(card);
         m_dataReset.Add(card.CurrentData);
         card.Hide();
         

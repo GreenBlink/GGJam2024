@@ -74,6 +74,11 @@ public class GameService : MonoBehaviour
         {
             _removeCardService.OpenRemoveCard(_cardService.DataReset);
         }
+
+        if (data.AddCard > 0 && _cardService.IsExistTypeCardInHand(data.Type))
+        {
+            _cardService.GetCardInDeck(data.AddCard);
+        }
         
         Debug.Log(data.Name + " ��� ��������� �����");
         Debug.Log(data.Secta + "+ ��������� � �����");

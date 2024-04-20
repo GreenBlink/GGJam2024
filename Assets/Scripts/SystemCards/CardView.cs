@@ -14,6 +14,7 @@ public class CardView : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject m_buyingBlock;
     [SerializeField] private ColorData m_dataColor;
     [SerializeField] private List<MaskableGraphic> m_objectsColorist;
+    [SerializeField] private GameObject m_backCost;
     
     [SerializeField] private ModView m_sect;
     [SerializeField] private ModView m_inquisition;
@@ -22,6 +23,7 @@ public class CardView : MonoBehaviour, IPointerClickHandler
     [SerializeField] private ModView m_points;
     [SerializeField] private ModView m_removeCard;
     [SerializeField] private ModView m_chaos;
+    [SerializeField] private ModView m_add;
 
     private Dictionary<CardType, Color> _colorData;
 
@@ -29,7 +31,6 @@ public class CardView : MonoBehaviour, IPointerClickHandler
     private const float DURATION_ANIM_FOCUS = 0.5f;
 
     public CardData CurrentData { get; private set; }
-    public bool IsActive => gameObject.activeInHierarchy;
 
     public event Action<CardView> OnChoiceCard;
     public event Action<CardView> OnClickCard;
@@ -44,7 +45,9 @@ public class CardView : MonoBehaviour, IPointerClickHandler
         m_sacrifice.SetInfo(data.Sacrifice);
         m_cost.SetInfo(data.Cost);
         m_points.SetInfo(data.Points);
+        m_add.SetInfo(data.AddCard);
         m_removeCard.gameObject.SetActive(data.RemoveCard);
+        m_backCost.SetActive(data.Cost != 0);
 
         if (data.Inquisition > 0)
         {
