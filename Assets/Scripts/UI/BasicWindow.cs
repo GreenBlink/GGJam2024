@@ -11,6 +11,12 @@ public class BasicWindow : MonoBehaviour
     }
     public void CloseWindow()
     {
+        StartCoroutine(Delay());
+    }
+
+    private IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(0.1f);
         _canvas.gameObject.SetActive(false);
     }
 }
