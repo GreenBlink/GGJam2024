@@ -12,11 +12,9 @@ public class FadeVideo : MonoBehaviour
     IEnumerator Start()
     {
         VideoPlayer videoPlayer = GetComponent<VideoPlayer>();
-        Debug.Log(videoPlayer.targetCameraAlpha);
         while (videoPlayer.targetCameraAlpha <= 1)
         {
             videoPlayer.targetCameraAlpha -= fadeSpeed * Time.deltaTime;
-            Debug.Log(videoPlayer.targetCameraAlpha);
             yield return null;
         }
     }
