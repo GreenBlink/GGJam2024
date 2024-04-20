@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2fab6aa6d034b16968c8b9e2af58e93, type: 3}
-  m_Name: CardDataFirstPoints
+  m_Name: CardData19
   m_EditorClassIdentifier: 
-  m_type: 0
+  m_type: 1
   m_background: {fileID: 0}
-  m_name: 111
-  m_cost: 0
-  m_points: 1
-  m_secta: 0
-  m_inquisition: 0
-  m_sacrifice: 0
+  m_name: "\u0416\u0435\u0440\u0442\u0432\u043E\u043F\u0440\u0438\u043D\u043E\u0448\u0435\u043D\u0438\u0435"
+  m_cost: 6
+  m_points: 0
+  m_secta: 3
+  m_inquisition: 5
+  m_sacrifice: 1
   m_addCard: 0
   m_removeCard: 0

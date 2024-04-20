@@ -11,7 +11,6 @@ public class CardsService : MonoBehaviour
     [SerializeField] private Transform m_container;
     [SerializeField] private CardView m_prefabCard;
     [SerializeField] private List<CardData> m_dataStartDeck = new List<CardData>();
-    [SerializeField] private CardData m_dataAddCardInReset;
     
     private Queue<CardData> m_dataDeck = new Queue<CardData>();
     private List<CardData> m_dataReset = new List<CardData>();
@@ -32,18 +31,6 @@ public class CardsService : MonoBehaviour
 
         UpdateCountDeck();
         UpdateCountReset();
-    }
-
-    [ContextMenu("AddCard")]
-    public void AddCard()
-    {
-        if (m_dataAddCardInReset == null)
-        {
-            Debug.LogError("Нужно добавить данные в CardsService.DataAddCardInReset!");
-            return;
-        }
-        
-        AddCard(m_dataAddCardInReset);
     }
     
     public void NextHand()
