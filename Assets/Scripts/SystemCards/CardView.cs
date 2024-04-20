@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class CardView : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
 { 
     [SerializeField] private RectTransform m_rect;
     [SerializeField] private Image m_background;
+    [SerializeField] private TextMeshProUGUI m_name;
 
     private Vector3 m_startDragMousePosition;
 
@@ -22,6 +24,7 @@ public class CardView : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
     public void SetInfo(CardData data)
     {
         CurrentData = data;
+        m_name.text = data.Name;
         m_background.sprite = data.Background;
 
         Show();
