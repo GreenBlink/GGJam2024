@@ -5,9 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField] private string SceneName;
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneName);
+        SceneManager.LoadScene("GameScene");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

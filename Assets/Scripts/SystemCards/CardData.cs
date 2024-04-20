@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CardData", menuName = "Data/CardData")]
-public class CardData : ScriptableObject
+public class CardData : ScriptableObject 
 {
     [SerializeField] private CardType m_type;
     [SerializeField] private Sprite m_background;
