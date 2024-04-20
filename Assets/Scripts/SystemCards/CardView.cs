@@ -5,6 +5,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+// public class CardClickView : MonoBehaviour, IPointerClickHandler
+// {
+//     
+// }
+
 public class CardView : MonoBehaviour, IPointerClickHandler, IDragHandler, IEndDragHandler, IBeginDragHandler
 { 
     [SerializeField] private RectTransform m_rect;
@@ -12,6 +17,12 @@ public class CardView : MonoBehaviour, IPointerClickHandler, IDragHandler, IEndD
     [SerializeField] private TextMeshProUGUI m_name;
     [SerializeField] private GameObject m_buyingBlock;
     [SerializeField] private bool m_isSystemDrag = true;
+    
+    [SerializeField] private TextMeshProUGUI m_sect;
+    [SerializeField] private TextMeshProUGUI m_inquisition;
+    [SerializeField] private TextMeshProUGUI m_sacrifice;
+    [SerializeField] private TextMeshProUGUI m_cost;
+    [SerializeField] private TextMeshProUGUI m_points;
 
     private Vector3 m_startDragMousePosition;
 
@@ -29,6 +40,12 @@ public class CardView : MonoBehaviour, IPointerClickHandler, IDragHandler, IEndD
         CurrentData = data;
         m_name.text = data.Name;
         m_background.sprite = data.Background;
+
+        m_sect.text = data.Secta.ToString();
+        m_inquisition.text = data.Inquisition.ToString();
+        m_sacrifice.text = data.Sacrifice.ToString();
+        m_cost.text = data.Cost.ToString();
+        m_points.text = data.Points.ToString();
 
         Show();
     }
