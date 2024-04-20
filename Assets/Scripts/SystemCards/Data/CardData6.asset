@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardData6
   m_EditorClassIdentifier: 
   m_type: 2
-  m_background: {fileID: 0}
+  m_background: {fileID: 21300000, guid: a28efeff5e9752d499ac54a8cb0f3f2d, type: 3}
   m_name: "\u041A\u0440\u043E\u0432\u0430\u0432\u044B\u0439 \u0442\u0430\u043D\u0435\u0446"
   m_cost: 7
   m_points: 5
