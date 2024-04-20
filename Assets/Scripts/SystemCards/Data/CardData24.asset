@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2fab6aa6d034b16968c8b9e2af58e93, type: 3}
-  m_Name: CardData5
+  m_Name: CardData24
   m_EditorClassIdentifier: 
   m_type: 2
   m_background: {fileID: 0}
-  m_name: "\u041C\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u043F\u0440\u0435\u0434\u0432\u0438\u0434\u0435\u043D\u0438\u0435"
-  m_cost: 5
-  m_points: 3
+  m_name: "\u0418\u0437\u0443\u0447\u0435\u043D\u0438\u0435 \u0441\u0432\u0438\u0442\u043A\u043E\u0432"
+  m_cost: 3
+  m_points: 1
   m_secta: 0
   m_inquisition: 0
   m_sacrifice: 0
-  m_addCard: 0
+  m_addCard: 1
   m_removeCard: 0
