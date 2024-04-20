@@ -72,7 +72,7 @@ public class GameService : MonoBehaviour
 
         if (data.RemoveCard)
         {
-            _removeCardService.OpenRemoveCard(_cardService.DataReset);
+            _removeCardService.OpenRemoveCard(_cardService.DataDeck, _cardService.DataReset);
         }
 
         if (data.AddCard > 0 && _cardService.IsExistTypeCardInHand(data.Type))

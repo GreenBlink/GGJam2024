@@ -8,11 +8,11 @@ public class RemoveCardService : MonoBehaviour
 
     private void Awake()
     {
-        _window.OnRemoveCard += _cardsService.RemoveCard;
+        _window.OnRemoveCard += _cardsService.RemoveCardAndRefresh;
     }
 
-    public void OpenRemoveCard(List<CardData> data)
+    public void OpenRemoveCard(List<CardData> dataDeck, List<CardData> dataReset)
     {
-        _window.Show(data);
+        _window.Show(dataDeck, dataReset);
     }
 }

@@ -8,9 +8,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 25872035714952644, guid: 0c7f065e4fda7064c8e4117ec01e9210, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 25872035714952644, guid: 0c7f065e4fda7064c8e4117ec01e9210, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 25872035714952644, guid: 0c7f065e4fda7064c8e4117ec01e9210, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 25872035714952644, guid: 0c7f065e4fda7064c8e4117ec01e9210, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 376088222441821502, guid: 0c7f065e4fda7064c8e4117ec01e9210, type: 3}
       propertyPath: m_Name
       value: CardBattle
+      objectReference: {fileID: 0}
+    - target: {fileID: 723561416327989168, guid: 0c7f065e4fda7064c8e4117ec01e9210, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 723561416327989168, guid: 0c7f065e4fda7064c8e4117ec01e9210, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 21.377426
       objectReference: {fileID: 0}
     - target: {fileID: 2790542159850979825, guid: 0c7f065e4fda7064c8e4117ec01e9210, type: 3}
       propertyPath: m_Pivot.x
@@ -91,6 +115,18 @@ PrefabInstance:
     - target: {fileID: 2790542159850979825, guid: 0c7f065e4fda7064c8e4117ec01e9210, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149965004138108781, guid: 0c7f065e4fda7064c8e4117ec01e9210, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055852357491318777, guid: 0c7f065e4fda7064c8e4117ec01e9210, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055852357491318777, guid: 0c7f065e4fda7064c8e4117ec01e9210, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000015258789
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

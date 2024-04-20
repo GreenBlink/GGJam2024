@@ -12,14 +12,19 @@ public class WindowRemoveCards : MonoBehaviour
     
     public event Action<CardData> OnRemoveCard;
 
-    public void Show(List<CardData> cardData)
+    public void Show(List<CardData> dataDeck, List<CardData> dataReset)
     {
         gameObject.SetActive(true);
 
         int i = 0;
-        for (; i < cardData.Count; i++)
+        for (; i < dataDeck.Count; i++)
         {
-            GetCardView(i).SetInfo(cardData[i]);
+            GetCardView(i).SetInfo(dataDeck[i]);
+        }
+        
+        for (; i < dataReset.Count; i++)
+        {
+            GetCardView(i).SetInfo(dataReset[i]);
         }
 
         for (; i < m_cards.Count; i++)

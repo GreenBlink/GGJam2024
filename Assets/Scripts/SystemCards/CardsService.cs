@@ -20,6 +20,7 @@ public class CardsService : MonoBehaviour
     private const int START_COUNT_CARDS_IN_HAND = 5;
 
     public List<CardData> DataReset => m_dataReset;
+    public List<CardData> DataDeck => m_dataDeck.ToList();
     public event Action<CardData> OnChoiceCard;
 
     private void Awake()
@@ -55,15 +56,53 @@ public class CardsService : MonoBehaviour
         }
     }
 
-    public void RemoveCard(CardData data)
+    public void RemoveCardAndRefresh(CardData data)
     {
-        m_dataReset.Remove(data);
+        if (m_dataReset.Contains(data))
+        {
+            m_dataReset.Remove(data);
+        }
+        else
+        {
+            m_dataDeck.ToList().Remove(data);
+        }
+
+        List<CardData> newCardData = new List<CardData>(m_dataReset);
+        newCardData.AddRange(m_dataDeck);
+        newCardData.Remove(data);
+
+        m_dataDeck.Clear();
+        m_dataReset.Clear();
+
+        newCardData = Shuffle(newCardData);
+        
+        foreach (var d in newCardData)
+        {
+            m_dataDeck.Enqueue(d);
+        }
+        
+        UpdateCountDeck();
         UpdateCountReset();
     }
     
     public bool IsExistTypeCardInHand(CardType cardType)
     {
-        return m_cardsInHand.Exists(x => x.CurrentData.Type == cardType);
+        int count = 0;
+        
+        foreach (var card in m_cardsInHand)
+        {
+            if (card.CurrentData.Type == cardType)
+            {
+                count++;
+            }
+
+            if (count == 2)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void CheckNeedRefresh()
@@ -72,7 +111,7 @@ public class CardsService : MonoBehaviour
         {
             return;
         }
-        
+
         m_dataReset = Shuffle(m_dataReset);
 
         foreach (var data in m_dataReset)
