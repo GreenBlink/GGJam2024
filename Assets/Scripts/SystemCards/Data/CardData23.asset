@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_type: 0
   m_background: {fileID: 0}
-  m_name: 
-  m_cost: 0
-  m_points: 0
+  m_name: "\u0422\u0435\u0441\u0442\u043E\u0432\u0430\u044F \u043D\u0430 4"
+  m_cost: 4
+  m_points: 4
   m_secta: 0
   m_inquisition: 0
   m_sacrifice: 0

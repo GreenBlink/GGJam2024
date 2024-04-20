@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fab6aa6d034b16968c8b9e2af58e93, type: 3}
   m_Name: CardData8
   m_EditorClassIdentifier: 
-  m_type: 0
+  m_type: 2
   m_background: {fileID: 0}
-  m_name: 
-  m_cost: 0
-  m_points: 0
+  m_name: "\u0417\u0430\u0442\u0451\u0440\u0442\u044B\u0439 \u0441\u043B\u0435\u0434"
+  m_cost: 7
+  m_points: 5
   m_secta: 0
   m_inquisition: 0
   m_sacrifice: 0
   m_addCard: 0
-  m_removeCard: 0
+  m_removeCard: 1
