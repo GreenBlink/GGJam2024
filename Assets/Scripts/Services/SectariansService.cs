@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,6 +14,8 @@ public class SectariansService : MonoBehaviour
     private int _maxSectarians;
     private int _currentSectarians;
 
+    public event Action<int> OnSectariansChanged;
+
     public void SetInfo(int population)
     {
         _maxSectarians = population;
@@ -23,7 +26,7 @@ public class SectariansService : MonoBehaviour
     public void SectariansChange(int value)
     {
         _currentSectarians += value;
-
+        OnSectariansChanged?.Invoke(value);
         UpdateTextSectarians();
 
         if (_currentSectarians >= _maxSectarians)
