@@ -6,6 +6,7 @@ using UnityEngine;
 public class InqusitionService : MonoBehaviour
 {
     [SerializeField] private TMP_Text _inqusitionTextNumber;
+    [SerializeField] private GameObject _looseWindow;
 
     private float _maxPercent = 100f;
     private float _currentPercent;
@@ -22,6 +23,10 @@ public class InqusitionService : MonoBehaviour
         if (_currentPercent < _maxPercent)
         {
             _currentPercent += value;
+        }
+        else
+        {
+            _looseWindow.SetActive(true);
         }
 
         UpdateTextInqusition();

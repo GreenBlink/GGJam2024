@@ -6,6 +6,7 @@ using UnityEngine;
 public class SacrifaicesService : MonoBehaviour
 {
     [SerializeField] private TMP_Text _sacrifacesTextNumber;
+    [SerializeField] private GameObject _winWindowBySacriface;
 
     private int _maxSacrifices;
     private int _currentSacrifices;
@@ -21,11 +22,20 @@ public class SacrifaicesService : MonoBehaviour
     {
         _currentSacrifices += value;
 
+        if (_currentSacrifices >= _maxSacrifices)
+        {
+            WinBySacrifaces();
+        }
+
         UpdateTextSacrifices();
     }
     
     private void UpdateTextSacrifices()
     {
         _sacrifacesTextNumber.text = _currentSacrifices + "/" + _maxSacrifices + "M";
+    }
+    private void WinBySacrifaces()
+    {
+        _winWindowBySacriface.SetActive(true);
     }
 }
