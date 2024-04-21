@@ -10,6 +10,7 @@ public class SacrifaicesService : MonoBehaviour
     [SerializeField] private TMP_Text _sacrifacesTextNumber;
     [SerializeField] private GameObject _winWindowBySacriface;
     [SerializeField] private Image _sacrifaceBar;
+    [SerializeField] private AudioSource _winAudioSource;
 
     private int _maxSacrifices;
     private int _currentSacrifices;
@@ -52,5 +53,6 @@ public class SacrifaicesService : MonoBehaviour
     private void WinBySacrifaces()
     {
         _winWindowBySacriface.SetActive(true);
+        _winAudioSource.Play();
     }
 }

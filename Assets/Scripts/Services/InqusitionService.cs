@@ -10,6 +10,7 @@ public class InqusitionService : MonoBehaviour
     [SerializeField] private TMP_Text _inqusitionTextNumber;
     [SerializeField] private GameObject _looseWindow;
     [SerializeField] private Image _inqusitionBar;
+    [SerializeField] private AudioSource _looseAudioSource;
 
     private float _maxPercent = 100f;
     private float _currentPercent;
@@ -44,11 +45,11 @@ public class InqusitionService : MonoBehaviour
                 _currentPercent = 0;
             }
         }
-        else
+        if (_currentPercent >= _maxPercent)
         {
             _looseWindow.SetActive(true);
+            _looseAudioSource.Play();
         }
-
         UpdateTextInqusition();
     }
 
