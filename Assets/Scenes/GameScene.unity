@@ -171,6 +171,18 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E"
       objectReference: {fileID: 0}
+    - target: {fileID: 3878387411756476840, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878387411756476840, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2004195179}
+    - target: {fileID: 3878387411756476840, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnValueChanged
+      objectReference: {fileID: 0}
     - target: {fileID: 3891611596283781111, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -260,12 +272,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6942035734616726600, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942035734616726600, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8096953488442719386, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8096953488442719386, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8096953488442719386, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8518065888441003904, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
       propertyPath: m_SortingOrder
@@ -832,7 +856,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 70f612b4ca7292d4b903518aaba2cce4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c50af919a10ae6a48b62d327945368a4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
@@ -2794,6 +2818,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c34b8cd55b224d74d85d44b961ef569b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2004195179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7283013538947628393, guid: 57ecfe41915936e40931763744e940bf, type: 3}
+  m_PrefabInstance: {fileID: 5646311466021333913}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cdf4c9900339643a549aac02d1b504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2019478493 stripped
