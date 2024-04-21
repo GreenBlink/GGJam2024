@@ -13,6 +13,7 @@ public class CardsService : MonoBehaviour
     [SerializeField] private CardView m_prefabCard;
     [SerializeField] private List<CardData> m_dataStartDeck = new List<CardData>();
     [SerializeField] private AudioSource _audioGetInHand;
+    [SerializeField] private GameObject _vfxNextMove;
     
     private Queue<CardData> m_dataDeck = new Queue<CardData>();
     private List<CardData> m_dataReset = new List<CardData>();
@@ -42,6 +43,8 @@ public class CardsService : MonoBehaviour
     {
         ResetHand();
         GetCardInDeck(START_COUNT_CARDS_IN_HAND);
+        
+        _vfxNextMove.SetActive(false);
     }
 
     public void AddCard(CardData data)
@@ -180,6 +183,8 @@ public class CardsService : MonoBehaviour
     {
         OnChoiceCard?.Invoke(card.CurrentData);
         CardToReset(card);
+
+        _vfxNextMove.SetActive(m_cardsInHand.Count == 0);
     }
 
     private void CardToReset(CardView card)
