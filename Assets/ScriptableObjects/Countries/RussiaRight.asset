@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountryName: Russia
   Sacrifices: 0
-  Sectarians: 0
-  Population: 11
+  Sectarians: 12
+  Population: 9

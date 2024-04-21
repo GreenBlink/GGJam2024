@@ -3776,6 +3776,18 @@ PrefabInstance:
       propertyPath: _windowRule
       value: 
       objectReference: {fileID: 1803833138}
+    - target: {fileID: 6289050496026295973, guid: 57ecfe41915936e40931763744e940bf, type: 3}
+      propertyPath: _data.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289050496026295973, guid: 57ecfe41915936e40931763744e940bf, type: 3}
+      propertyPath: _data.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: e182987d03e41f042a80bd41560f86ce, type: 2}
+    - target: {fileID: 6289050496026295973, guid: 57ecfe41915936e40931763744e940bf, type: 3}
+      propertyPath: _data.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: d83dea5b74cb00148a0e2e12d45184e0, type: 2}
     - target: {fileID: 7283013538947628393, guid: 57ecfe41915936e40931763744e940bf, type: 3}
       propertyPath: _music
       value: 

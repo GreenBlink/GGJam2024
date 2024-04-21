@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountryName: GreenLand
   Sacrifices: 0
-  Sectarians: 0
-  Population: 11
+  Sectarians: 10
+  Population: 8

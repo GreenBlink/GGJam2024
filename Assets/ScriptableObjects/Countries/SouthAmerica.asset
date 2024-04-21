@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountryName: SouthAmerica
   Sacrifices: 0
-  Sectarians: 0
-  Population: 6
+  Sectarians: 2
+  Population: 8

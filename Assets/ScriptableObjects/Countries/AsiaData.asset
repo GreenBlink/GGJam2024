@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountryName: Asia
   Sacrifices: 0
-  Sectarians: 0
-  Population: 12
+  Sectarians: 6
+  Population: 9
