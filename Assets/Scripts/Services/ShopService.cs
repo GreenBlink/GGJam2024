@@ -9,6 +9,7 @@ public class ShopService : MonoBehaviour
     [SerializeField] private PointsService _pointsService;
     [SerializeField] private CardsService _cardsService;
     [SerializeField] private WindowShop _windowShop;
+    [SerializeField] private AudioSource _clickCard;
     
     private List<CardData> _availableCards = new List<CardData>(COUNT_BUY_CARD);
     private List<bool> _buyCards = new List<bool>(COUNT_BUY_CARD);
@@ -60,6 +61,7 @@ public class ShopService : MonoBehaviour
         _buyCards[index] = true;
         _cardsService.AddCard(cardData);
         _pointsService.PointsChange(-cardData.Cost);
+        _clickCard.Play();
 
         OpenShop();
     }
