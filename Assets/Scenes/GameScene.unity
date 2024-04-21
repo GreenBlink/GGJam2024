@@ -171,6 +171,18 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E"
       objectReference: {fileID: 0}
+    - target: {fileID: 3048090307237693898, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 50268949}
+    - target: {fileID: 3048090307237693898, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048090307237693898, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BasicWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3878387411756476840, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
       propertyPath: m_Value
       value: 1
@@ -270,6 +282,10 @@ PrefabInstance:
     - target: {fileID: 4090345256278052379, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522018499984368170, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
+      propertyPath: m_text
+      value: "\u0412\u044B\u0445\u043E\u0434 \u0438\u0437 \u0438\u0433\u0440\u044B"
       objectReference: {fileID: 0}
     - target: {fileID: 5652783236158950918, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
