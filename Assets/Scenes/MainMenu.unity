@@ -369,9 +369,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 833679274}
-        m_TargetAssemblyTypeName: BasicWindow, Assembly-CSharp
-        m_MethodName: OpenWindow
+      - m_Target: {fileID: 1269638760807498374}
+        m_TargetAssemblyTypeName: ShowAllCards, Assembly-CSharp
+        m_MethodName: ShowAllCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -692,17 +692,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826031802}
   m_CullTransparentMesh: 1
---- !u!114 &833679274 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6536949520271572712, guid: bca83908583729241928c81560b5864d, type: 3}
-  m_PrefabInstance: {fileID: 1269638760807498373}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b153e515c1230234fac22ff4854fc74d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &854872168
 GameObject:
   m_ObjectHideFlags: 0
@@ -2358,6 +2347,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bca83908583729241928c81560b5864d, type: 3}
+--- !u!114 &1269638760807498374 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6277591420790331894, guid: bca83908583729241928c81560b5864d, type: 3}
+  m_PrefabInstance: {fileID: 1269638760807498373}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34b8cd55b224d74d85d44b961ef569b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
