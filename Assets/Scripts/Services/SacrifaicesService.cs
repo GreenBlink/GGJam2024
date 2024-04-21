@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,7 +30,7 @@ public class SacrifaicesService : MonoBehaviour
         var sacrifaces = _currentSacrifices;
         var population = _maxSacrifices;
         var percent = (float)sacrifaces / population;
-        _sacrifaceBar.fillAmount = Mathf.Lerp(_sacrifaceBar.fillAmount, percent, Time.deltaTime * 0.5f);
+        _sacrifaceBar.DOFillAmount(percent, 1f);
     }
 
     public void SacrificesChange(int value)

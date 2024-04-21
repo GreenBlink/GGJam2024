@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,7 +31,7 @@ public class InqusitionService : MonoBehaviour
         var sectarians = _currentPercent;
         var maxpercent = _maxPercent;
         var percent = (float)sectarians / maxpercent;
-        _inqusitionBar.fillAmount = Mathf.Lerp(_inqusitionBar.fillAmount, percent, Time.deltaTime * 0.5f);
+        _inqusitionBar.DOFillAmount(percent, 1f);;
     }
 
     public void PercentChange(int value)
