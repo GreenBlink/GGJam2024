@@ -11,7 +11,7 @@ public class SectariansService : MonoBehaviour
     [SerializeField] private TMP_Text _sectariansTextNumber;
     [SerializeField] private GameObject _winWindowBySectarians;
     [SerializeField] private Image _sectariansBar;
-
+    [SerializeField] private AudioSource _winAudioSource;
     public int CurrentSectarians => _currentSectarians;
 
     private int _maxSectarians;
@@ -59,5 +59,6 @@ public class SectariansService : MonoBehaviour
     private void WinBySect()
     {
         _winWindowBySectarians.SetActive(true);
+        _winAudioSource.Play();
     }
 }
