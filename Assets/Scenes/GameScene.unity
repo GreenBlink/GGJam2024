@@ -1801,6 +1801,22 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 6.8668766
       objectReference: {fileID: 0}
+    - target: {fileID: 4130812034784652706, guid: c5300d550a9a83a4b92735c121d2815c, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130812034784652706, guid: c5300d550a9a83a4b92735c121d2815c, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130812034784652706, guid: c5300d550a9a83a4b92735c121d2815c, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130812034784652706, guid: c5300d550a9a83a4b92735c121d2815c, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 4185168135112128170, guid: c5300d550a9a83a4b92735c121d2815c, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2890,6 +2906,22 @@ PrefabInstance:
     - target: {fileID: 4130812034784652706, guid: c5300d550a9a83a4b92735c121d2815c, type: 3}
       propertyPath: m_margin.z
       value: 6.8668766
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130812034784652706, guid: c5300d550a9a83a4b92735c121d2815c, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130812034784652706, guid: c5300d550a9a83a4b92735c121d2815c, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130812034784652706, guid: c5300d550a9a83a4b92735c121d2815c, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130812034784652706, guid: c5300d550a9a83a4b92735c121d2815c, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 4185168135112128170, guid: c5300d550a9a83a4b92735c121d2815c, type: 3}
       propertyPath: m_Sprite
