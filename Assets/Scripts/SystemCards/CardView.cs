@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -32,6 +34,7 @@ public class CardView : MonoBehaviour, IPointerClickHandler
     [SerializeField] private ModView m_add;
 
     private Dictionary<CardType, Color> _colorData;
+    private CancellationTokenSource m_token;
 
     private const int MAX_VALUE_Y_FOCUS = 80;
     private const float DURATION_ANIM_FOCUS = 0.5f;
@@ -97,6 +100,7 @@ public class CardView : MonoBehaviour, IPointerClickHandler
         
         SetVfxState(false);
         
+        m_token?.Cancel();
         DOTween.Kill("Hide");
         m_rect.anchoredPosition = new Vector3(0, MAX_VALUE_Y_FOCUS);
         m_rect.localScale = Vector3.one;
@@ -135,6 +139,21 @@ public class CardView : MonoBehaviour, IPointerClickHandler
         }
         
         m_canvasGroup.DOFade(0f, 0.2f).OnComplete(() => { gameObject.SetActive(false); }).SetId("Hide");
+
+        m_token = new CancellationTokenSource();
+        DelayHide(m_token.Token).Forget();
+    }
+
+    private async UniTask DelayHide(CancellationToken token)
+    {
+        await UniTask.Delay(200, cancellationToken: token);
+
+        if (token.IsCancellationRequested)
+        {
+            return;
+        }
+        
+        gameObject.SetActive(false);
     }
 
     public void OnPointerClick(PointerEventData eventData)

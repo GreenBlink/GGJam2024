@@ -16,7 +16,7 @@ public class InputKeyEsc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !_windowShop.gameObject.activeInHierarchy && !_windowCards.gameObject.activeInHierarchy && !_windowMenu.gameObject.activeInHierarchy &&!_windowRules.gameObject.activeInHierarchy &&!_windowWin.gameObject.activeInHierarchy &&!_windowLoose.gameObject.activeInHierarchy)
         {
             _gameService.NextMove();
             return;
