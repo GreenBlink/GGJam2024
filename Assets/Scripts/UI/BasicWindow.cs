@@ -5,10 +5,12 @@ using UnityEngine;
 public class BasicWindow : MonoBehaviour
 {
     [SerializeField] private Canvas _canvas;
+    
     public void OpenWindow()
     {
         _canvas.gameObject.SetActive(true);
     }
+    
     public void CloseWindow()
     {
         StartCoroutine(Delay());
