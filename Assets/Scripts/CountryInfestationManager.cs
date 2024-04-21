@@ -55,7 +55,10 @@ public class CountryInfestationManager : MonoBehaviour
             var sectarians = country.GetComponent<CountryStateManager>().CountryData.Sectarians;
             var population = country.GetComponent<CountryStateManager>().CountryData.Population;
             var percent = (float)sectarians / population;
-            country.fillAmount = Mathf.Lerp(country.fillAmount, percent, Time.deltaTime * 0.5f);
+           // country.fillAmount = Mathf.Lerp(country.fillAmount, percent, Time.deltaTime * 0.5f);
+            Color c = country.color;
+            c.a = Mathf.Lerp(c.a, percent, Time.deltaTime * 0.5f);
+            country.color = c;
         }
     }
 }
