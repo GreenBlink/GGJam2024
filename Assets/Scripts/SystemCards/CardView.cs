@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -15,6 +14,8 @@ public class CardView : MonoBehaviour, IPointerClickHandler
     [SerializeField] private ColorData m_dataColor;
     [SerializeField] private List<MaskableGraphic> m_objectsColorist;
     [SerializeField] private GameObject m_backCost;
+    [SerializeField] private GameObject m_vfx;
+    [SerializeField] private MagnifierView m_magnifier;
     
     [SerializeField] private ModView m_sect;
     [SerializeField] private ModView m_inquisition;
@@ -67,6 +68,7 @@ public class CardView : MonoBehaviour, IPointerClickHandler
     public void SetBuyingState(bool isBuy)
     {
         m_buyingBlock.SetActive(isBuy);
+        m_magnifier.SetActive(!isBuy);
     }
 
     public void ChoiceCard()
@@ -95,6 +97,11 @@ public class CardView : MonoBehaviour, IPointerClickHandler
         OnClickCard?.Invoke(this);
     }
     
+    public void SetVfxState(bool isActive)
+    {
+        m_vfx.SetActive(isActive);
+    }
+    
     private void Colorist()
     {
         _colorData ??= new Dictionary<CardType, Color>
@@ -110,5 +117,4 @@ public class CardView : MonoBehaviour, IPointerClickHandler
             obj.color = _colorData[CurrentData.Type];
         }
     }
-
 }

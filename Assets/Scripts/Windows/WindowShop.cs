@@ -29,6 +29,7 @@ public class WindowShop : MonoBehaviour
         for (; i < _cards.Count && i < data.Count; i++)
         {
             _cards[i].SetInfo(data[i]);
+            _cards[i].SetVfxState(!isBuyCards[i] && points >= data[i].Cost);
             _cards[i].SetBuyingState(isBuyCards[i]);
         }
 
