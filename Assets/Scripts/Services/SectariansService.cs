@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,7 +36,7 @@ public class SectariansService : MonoBehaviour
         var sectarians = _currentSectarians;
         var population = _maxSectarians;
         var percent = (float)sectarians / population;
-        _sectariansBar.fillAmount = Mathf.Lerp(_sectariansBar.fillAmount, percent, Time.deltaTime * 0.5f);
+        _sectariansBar.DOFillAmount(percent, 1f);
     }
 
     public void SectariansChange(int value)
