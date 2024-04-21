@@ -37,7 +37,7 @@ public class SectariansService : MonoBehaviour
 
     private void UpdateTextSectarians()
     {
-        _sectariansTextNumber.text = _currentSectarians + "/" + _maxSectarians + "M";
+        _sectariansTextNumber.text = _currentSectarians + " / " + _maxSectarians;
     }
 
     private void WinBySect()

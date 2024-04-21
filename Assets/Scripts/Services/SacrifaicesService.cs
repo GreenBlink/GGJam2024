@@ -32,7 +32,7 @@ public class SacrifaicesService : MonoBehaviour
     
     private void UpdateTextSacrifices()
     {
-        _sacrifacesTextNumber.text = _currentSacrifices + "/" + _maxSacrifices + "M";
+        _sacrifacesTextNumber.text = _currentSacrifices + " / " + _maxSacrifices;
     }
     private void WinBySacrifaces()
     {
