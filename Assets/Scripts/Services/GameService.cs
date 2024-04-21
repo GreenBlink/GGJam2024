@@ -17,6 +17,7 @@ public class GameService : MonoBehaviour
     [SerializeField] private PointsService _pointsService;
     [SerializeField] private RemoveCardService _removeCardService;
     [SerializeField] private TMP_Text _movesText;
+    [SerializeField] private GameObject _windowRule;
     [SerializeField] private int _maxSacrifaicesForWin;
     [SerializeField] private int _PercentPerDay;
 
@@ -37,6 +38,8 @@ public class GameService : MonoBehaviour
 
     private void Start()
     {
+        _windowRule.SetActive(true);
+        
         NextMove();
     }
 
