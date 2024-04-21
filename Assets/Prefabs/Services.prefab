@@ -99,7 +99,7 @@ MonoBehaviour:
   _pointsService: {fileID: 4545940086802637812}
   _removeCardService: {fileID: 4227526294237498269}
   _movesText: {fileID: 0}
-  _maxSacrifaicesForWin: 25
+  _maxSacrifaicesForWin: 15
   _PercentPerDay: 4
 --- !u!114 &67877238630497983
 MonoBehaviour:

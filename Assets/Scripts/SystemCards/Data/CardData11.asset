@@ -18,7 +18,7 @@ MonoBehaviour:
   m_cost: 9
   m_points: 0
   m_secta: 0
-  m_inquisition: -7
+  m_inquisition: -5
   m_sacrifice: 0
   m_addCard: 0
   m_removeCard: 0
