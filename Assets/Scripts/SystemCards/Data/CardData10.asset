@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_type: 3
   m_background: {fileID: 21300000, guid: 4eb0c72064b7ef2459eff9a9f5df8f4a, type: 3}
-  m_name: "\u041F\u0443\u0431\u043B\u0438\u0447\u043D\u0430\u044F \u0440\u0438\u0442\u043E\u0440\u0438\u043A\u0430"
+  m_name: "\u041F\u043E\u043B\u0435\u043C\u0438\u043A\u0430"
   m_cost: 7
   m_points: 0
   m_secta: 0
