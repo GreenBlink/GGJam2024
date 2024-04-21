@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SacrifaicesService : MonoBehaviour
 {
     [SerializeField] private TMP_Text _sacrifacesTextNumber;
     [SerializeField] private GameObject _winWindowBySacriface;
+    [SerializeField] private Image _sacrifaceBar;
 
     private int _maxSacrifices;
     private int _currentSacrifices;
@@ -16,6 +18,18 @@ public class SacrifaicesService : MonoBehaviour
         _maxSacrifices = maxSacrifices;
         
         UpdateTextSacrifices();
+    }
+    private void Awake()
+    {
+        _sacrifaceBar.fillAmount = 0;
+    }
+
+    private void Update()
+    {
+        var sacrifaces = _currentSacrifices;
+        var population = _maxSacrifices;
+        var percent = (float)sacrifaces / population;
+        _sacrifaceBar.fillAmount = Mathf.Lerp(_sacrifaceBar.fillAmount, percent, Time.deltaTime * 0.5f);
     }
 
     public void SacrificesChange(int value)
