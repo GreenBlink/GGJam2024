@@ -24,20 +24,22 @@ public class WindowRemoveCards : MonoBehaviour
     {
         gameObject.SetActive(true);
 
-        int i = 0;
-        for (; i < dataDeck.Count; i++)
+        int index = 0;
+        for (int i = 0; i < dataDeck.Count; i++)
         {
-            GetCardView(i).SetInfo(dataDeck[i]);
+            GetCardView(index).SetInfo(dataDeck[i]);
+            index++;
         }
         
-        for (; i < dataReset.Count; i++)
+        for (int j = 0; j < dataReset.Count; j++)
         {
-            GetCardView(i).SetInfo(dataReset[i]);
+            GetCardView(index).SetInfo(dataReset[j]);
+            index++;
         }
 
-        for (; i < m_cards.Count; i++)
+        for (; index < m_cards.Count; index++)
         {
-            m_cards[i].Hide();
+            m_cards[index].Hide();
         }
     }
 
