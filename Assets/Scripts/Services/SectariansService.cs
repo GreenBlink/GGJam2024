@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SectariansService : MonoBehaviour
 {
     [SerializeField] private TMP_Text _sectariansTextNumber;
     [SerializeField] private GameObject _winWindowBySectarians;
+    [SerializeField] private Image _sectariansBar;
 
     public int CurrentSectarians => _currentSectarians;
 
@@ -21,6 +23,19 @@ public class SectariansService : MonoBehaviour
         _maxSectarians = population;
         
         UpdateTextSectarians();
+    }
+
+    private void Awake()
+    {
+        _sectariansBar.fillAmount = 0;
+    }
+
+    private void Update()
+    {
+        var sectarians = _currentSectarians;
+        var population = _maxSectarians;
+        var percent = (float)sectarians / population;
+        _sectariansBar.fillAmount = Mathf.Lerp(_sectariansBar.fillAmount, percent, Time.deltaTime * 0.5f);
     }
 
     public void SectariansChange(int value)
