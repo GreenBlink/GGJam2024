@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 1927604358891798434, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
+      propertyPath: m_text
+      value: "\u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E"
+      objectReference: {fileID: 0}
     - target: {fileID: 3891611596283781111, guid: ccde45f13fdd02548959b982d0de3b2e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
