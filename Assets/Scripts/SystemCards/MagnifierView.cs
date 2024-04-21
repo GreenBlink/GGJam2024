@@ -6,7 +6,7 @@ public class MagnifierView : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 {
     [SerializeField] private RectTransform m_rect;
 
-    private bool _isActive;
+    private bool _isActive = true;
     
     private const float DURATION_ANIM_FOCUS = 0.5f;
     private const float SCALE_FOCUS = 1.2f;

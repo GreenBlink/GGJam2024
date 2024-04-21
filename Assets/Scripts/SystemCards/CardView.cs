@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -16,6 +17,10 @@ public class CardView : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject m_backCost;
     [SerializeField] private GameObject m_vfx;
     [SerializeField] private MagnifierView m_magnifier;
+    [SerializeField] private CardDragView m_drag;
+    [SerializeField] private CanvasGroup m_canvasGroup;
+    [SerializeField] private LayoutElement m_elementLayout;
+    [SerializeField] private bool m_anim;
     
     [SerializeField] private ModView m_sect;
     [SerializeField] private ModView m_inquisition;
@@ -78,18 +83,58 @@ public class CardView : MonoBehaviour, IPointerClickHandler
 
     public void Show()
     {
-        m_rect.anchoredPosition = Vector2.zero;
-        m_rect.localScale = Vector3.one;
+        if (!m_anim)
+        {
+            gameObject.SetActive(true);
+            m_rect.anchoredPosition = Vector2.zero;
+            m_rect.localScale = Vector3.one;
+            return;
+        }
         
         gameObject.SetActive(true);
+        m_elementLayout.ignoreLayout = false;
+        m_canvasGroup.alpha = 0;
+        
+        SetVfxState(false);
+        
+        DOTween.Kill("Hide");
+        m_rect.anchoredPosition = new Vector3(0, MAX_VALUE_Y_FOCUS);
+        m_rect.localScale = Vector3.one;
+        
+        m_rect.DOAnchorPos(new Vector2(0,0), DURATION_ANIM_FOCUS).SetId("Move");
+        m_canvasGroup.DOFade(1, DURATION_ANIM_FOCUS).OnComplete(ShowActivate);
         //анимация для появления из колоды
     }
 
+    private void ShowActivate()
+    {
+        m_magnifier.enabled = true;
+        
+        if (m_drag)
+        {
+            m_drag.enabled = true;
+        }
+    }
+    
     public void Hide()
     {
         CurrentData = null;
-        gameObject.SetActive(false);
-        //анимация для ухода в сброс
+        
+        if (!m_anim)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+        
+        m_magnifier.enabled = false;
+        m_elementLayout.ignoreLayout = true;
+
+        if (m_drag)
+        {
+            m_drag.enabled = false;
+        }
+        
+        m_canvasGroup.DOFade(0f, 0.2f).OnComplete(() => { gameObject.SetActive(false); }).SetId("Hide");
     }
 
     public void OnPointerClick(PointerEventData eventData)
