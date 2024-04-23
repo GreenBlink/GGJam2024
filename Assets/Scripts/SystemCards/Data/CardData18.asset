@@ -15,10 +15,10 @@ MonoBehaviour:
   m_type: 1
   m_background: {fileID: 21300000, guid: f7a0695a39c3b894eb6c813711e13b76, type: 3}
   m_name: "\u0413\u043E\u043B\u043E\u0441\u0430"
-  m_cost: 8
+  m_cost: 7
   m_points: 0
   m_secta: 10
-  m_inquisition: 6
+  m_inquisition: 3
   m_sacrifice: 2
   m_addCard: 0
   m_removeCard: 0
