@@ -3983,6 +3983,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5346095416035280877, guid: 6f155cee474dc9d4abc716e36339e45d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6716623652477893205, guid: 6f155cee474dc9d4abc716e36339e45d, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 301.7
@@ -4306,6 +4310,10 @@ PrefabInstance:
       propertyPath: _data.Array.data[8]
       value: 
       objectReference: {fileID: 11400000, guid: d83dea5b74cb00148a0e2e12d45184e0, type: 2}
+    - target: {fileID: 6289050496026295973, guid: 57ecfe41915936e40931763744e940bf, type: 3}
+      propertyPath: _maxSacrifaicesForWin
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7283013538947628393, guid: 57ecfe41915936e40931763744e940bf, type: 3}
       propertyPath: _music
       value: 

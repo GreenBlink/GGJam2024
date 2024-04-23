@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountryName: Africa
   Sacrifices: 0
-  Sectarians: 1
-  Population: 8
+  Sectarians: 11
+  Population: 20
