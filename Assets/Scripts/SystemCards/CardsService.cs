@@ -63,23 +63,18 @@ public class CardsService : MonoBehaviour
 
     public void RemoveCardAndRefresh(CardData data)
     {
+        List<CardData> newCardData = new List<CardData>(m_dataDeck);
+        
         if (m_dataReset.Contains(data))
         {
             m_dataReset.Remove(data);
         }
         else
         {
-            m_dataDeck.ToList().Remove(data);
+            newCardData.Remove(data);
         }
 
-        List<CardData> newCardData = new List<CardData>(m_dataReset);
-        newCardData.AddRange(m_dataDeck);
-        newCardData.Remove(data);
-
         m_dataDeck.Clear();
-        m_dataReset.Clear();
-
-        newCardData = Shuffle(newCardData);
         
         foreach (var d in newCardData)
         {
