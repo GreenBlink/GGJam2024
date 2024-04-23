@@ -5,12 +5,13 @@ using Random = UnityEngine.Random;
 
 public class ShopService : MonoBehaviour
 {
-    [SerializeField] private List<CardData> _data = new List<CardData>();
+    [SerializeField] private CardsDatabase _database; 
     [SerializeField] private PointsService _pointsService;
     [SerializeField] private CardsService _cardsService;
     [SerializeField] private WindowShop _windowShop;
     [SerializeField] private AudioSource _clickCard;
     
+    private List<CardData> _data = new List<CardData>();
     private List<CardData> _availableCards = new List<CardData>(COUNT_BUY_CARD);
     private List<bool> _buyCards = new List<bool>(COUNT_BUY_CARD);
     
@@ -18,6 +19,7 @@ public class ShopService : MonoBehaviour
 
     private void Awake()
     {
+        _data = new List<CardData>(_database.Cards);
         _windowShop.OnBuyCard += BuyCard;
 
         for (int i = 0; i < COUNT_BUY_CARD; i++)
